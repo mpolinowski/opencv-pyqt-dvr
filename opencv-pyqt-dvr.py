@@ -70,7 +70,8 @@ class DvrDashboard(QMainWindow, ui):
                 detection_image = QImage('detection_bounding_box.jpg')
                 detection_image_map = QPixmap.fromImage(detection_image)
                 self.detection.setPixmap(detection_image_map)
-
+                
+            # also show live video for reference
             cv2.imshow(RTSP_URL, img)
 
             if cv2.waitKey(1) == 27:  # Keep running until you press `esc`
